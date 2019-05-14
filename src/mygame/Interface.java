@@ -35,6 +35,10 @@ public class Interface {
                 case "quitter":
                     quit();
                     break;
+                case "play":
+                    game = false;
+                    tableGame();
+                    break;
                 default:
                     invalide();
                     break;
@@ -67,12 +71,14 @@ public class Interface {
     }
 
     private void menu() {
+        game =true;
         Scanner choiceClasse = new Scanner(System.in);
         System.out.println("Menu : ");
         System.out.println(" Nouveau guerrier taper ->      << guerrier >>");
         System.out.println(" Nouveau Magicien taper ->      << magicien >>");
         System.out.println(" Liste des personnages taper -> << liste >>");
         System.out.println(" modifier/supprimez un personnages taper -> << modifier >>");
+        System.out.println(" Lancer une partie -> << play >>");
         System.out.println(" Quittez le jeu taper ->        << quittez >>");
         classChoice = choiceClasse.nextLine();
 
@@ -202,4 +208,31 @@ public class Interface {
         }
     }
 
+    private void tableGame() {
+        Scanner cases = new Scanner(System.in);
+        System.out.println("Inscrivez votre nombre de case");
+        int nbCase = cases.nextInt();
+        int maxLevel = 10;
+        int minLevel = 0;
+        int rangeLevel = maxLevel - minLevel + 1;
+        int numCase = 0;
+        ArrayList tableGame = new ArrayList();
+        for (int i = 0; i < nbCase; i++) {
+            int caseName = (int) (Math.random() * rangeLevel) + minLevel;
+          if ((caseName == 0 ||caseName == 2 ||caseName == 5) && i > 4){
+            Case carre = new Case("ennemie", numCase);
+            tableGame.add(carre);
+            numCase++;
+          } else {
+              Case carre = new Case("objet bonus", numCase);
+              tableGame.add(carre);
+              numCase++;
+          }
+        }
+        for (int i = 0; i < tableGame.size(); i++) {
+            System.out.println(tableGame.get(i));
+        }
+        menu();
+    }
 }
+
