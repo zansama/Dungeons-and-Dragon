@@ -1,8 +1,8 @@
 package mygame;
 
 public class Spell {
-    protected String name;
-    protected int strenghtAttack;
+    private String name;
+    private int strenghtAttack;
 
     public Spell(String name, int strenghtAttack) {
         this.name = name;
@@ -22,6 +22,7 @@ public class Spell {
 
 
     }
+
     public void SetSpellStrenghtAttack(int strenghtAttack) {
         this.strenghtAttack = strenghtAttack;
 
@@ -29,7 +30,7 @@ public class Spell {
 
     public String toString() {
         String newLine = System.getProperty("line.separator");
-        return "Nom du sort : " +name+ newLine + "Force du sort : " + strenghtAttack;
+        return "Nom du sort : " + name + newLine + "Force du sort : " + strenghtAttack;
 
     }
 }

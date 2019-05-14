@@ -1,13 +1,14 @@
 package mygame;
 
 public class Weapon {
-   protected String name;
-    protected int strenghtAttack;
+    private String name;
+    private int strenghtAttack;
 
     public Weapon(String name, int strenghtAttack) {
         this.name = name;
         this.strenghtAttack = strenghtAttack;
     }
+
     public String getWeaponName() {
         return name;
     }
@@ -21,6 +22,7 @@ public class Weapon {
 
 
     }
+
     public void SetWeaponStrenghtAttack(int strenghtAttack) {
         this.strenghtAttack = strenghtAttack;
 

@@ -1,4 +1,5 @@
 package mygame;
+
 abstract public class Personnage {
     protected String name;
     protected String image;
@@ -27,6 +28,7 @@ abstract public class Personnage {
         this.strenghtAttack = strenghtAttack;
 
     }
+
     public String getName() {
         return name;
     }
@@ -36,6 +38,7 @@ abstract public class Personnage {
         this.name = newName;
     }
 
+    // Getter
     public String getImage() {
         return image;
     }
@@ -45,6 +48,7 @@ abstract public class Personnage {
         this.image = newImage;
     }
 
+    // Getter
     public int getLifelevel() {
         return lifeLevel;
     }
@@ -54,6 +58,7 @@ abstract public class Personnage {
         this.lifeLevel = newlifeLevel;
     }
 
+    // Getter
     public int getStrenghtAttack() {
         return strenghtAttack;
     }
@@ -63,8 +68,9 @@ abstract public class Personnage {
         this.strenghtAttack = newStrenghtAttack;
     }
 
+    //toString
     public String toString() {
         String newLine = System.getProperty("line.separator");
-        return "Nom du personnage : " +name+ newLine + "Image du personnage : " +image + newLine + "Force du personnage : " + strenghtAttack + newLine + "Vie du personnage : "+lifeLevel;
+        return "Nom du personnage : " + name + newLine + "Image du personnage : " + image + newLine + "Force du personnage : " + strenghtAttack + newLine + "Vie du personnage : " + lifeLevel;
     }
 }
